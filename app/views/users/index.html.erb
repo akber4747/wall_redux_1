@@ -1,0 +1,16 @@
+<h1>Welcome <%= @current_user.email %></h1>
+<form method="delete" action="signout">
+	<input type="submit" value="Log out">
+</form>
+<div class ='col-sm-5'>
+<%= simple_form_for :post, :url => 'posts' do |f| %>
+<%= f.input :content, as: :text %>
+<%= f.input :user_id, as: :hidden, input_html: { value: @current_user.id} %>
+<%= f.button :submit %>
+<% end %>
+<ol>
+
+<% Post.all.each do |i|  %>
+<li><p>"<%= i.content %>"</p> posted by <%= i.user_id %> </li>
+<% end %>
+</ol>

@@ -1,0 +1,19 @@
+<h1>The Wall Redux (Registration -- Users/new) </h1>
+<div class='col-sm-4'>
+<%= simple_form_for(@user) do |f| %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :email %>
+<%= f.input :password %>
+<%= f.input :password_confirmation %>
+<%= f.button :submit, "Register" %>
+<% end %>
+</div>
+
+<div class='col-sm-6'>
+<%= simple_form_for(:session, :url => sessions_path) do|f| %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.button :submit, "Log In"%>
+	<% end %>
+</div>

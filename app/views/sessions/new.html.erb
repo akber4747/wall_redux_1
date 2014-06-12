@@ -1,0 +1,8 @@
+<h1>The Wall -- Sign In (sessions/new)</h1>
+
+
+<%= simple_form_for(:session, :url => sessions_path) do|f| %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.button :submit %>
+	<% end %>
